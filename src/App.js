@@ -59,11 +59,11 @@ class App extends React.Component {
     };
   }
 
-  handleChanges = event => {
+changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  addNewTodo = event => {
+  submitHandler = event => {
     event.preventDefault();
     this.setState({
       todoList: [...this.state.todoList,
@@ -78,8 +78,8 @@ class App extends React.Component {
         <h2>Todo List: MVP</h2>
         <TodoList todoChangeList={this.state.todoList} />
         <TodoForm
-          addNewTodo={this.addNewTodo}
-          handleChanges={this.handleChanges}
+          submitHandler={this.submitHandler}
+          changeHandler={this.changeHandler}
           task={this.state.task}
         />
       </div>
